@@ -1,16 +1,67 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Calculator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+	<style>
+		body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
 
+h1 {
+    color: #333;
+}
+	</style>
 <body>
-	<!-- the entire body must be written by student -->
+    <h1>Shape Calculator</h1>
     <script type="text/javascript" src="./script.js">
-</script>
+		class Rectangle {
+    constructor(width, height) {
+        this._width = width;  // Private property for width
+        this._height = height; // Private property for height
+    }
 
+    get width() {
+        return this._width; // Getter for width
+    }
+
+    get height() {
+        return this._height; // Getter for height
+    }
+
+    getArea() {
+        return this._width * this._height; // Method to calculate area
+    }
+}
+
+class Square extends Rectangle {
+    constructor(side) {
+        super(side, side); // Call the Rectangle constructor with side for both width and height
+    }
+
+    getPerimeter() {
+        return 4 * this.width; // Method to calculate perimeter
+    }
+}
+
+// Testing the classes
+const rectangle = new Rectangle(5, 10);
+console.log("Rectangle Width:", rectangle.width); // Output: 5
+console.log("Rectangle Height:", rectangle.height); // Output: 10
+console.log("Rectangle Area:", rectangle.getArea()); // Output: 50
+
+const square = new Square(7);
+console.log("Square Width:", square.width); // Output: 7
+console.log("Square Height:", square.height); // Output: 7
+console.log("Square Area:", square.getArea()); // Output: 49
+console.log("Square Perimeter:", square.getPerimeter()); // Output: 28
+	</script>
+	
 </body>
-
 </html>
