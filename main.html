@@ -61,6 +61,18 @@
         console.log("Square Height:", square.height); // Output: 7
         console.log("Square Area:", square.getArea()); // Output: 49
         console.log("Square Perimeter:", square.getPerimeter()); // Output: 28
+		document.getElementById("calculateRectangle").addEventListener("click", function() {
+            const width = parseFloat(document.getElementById("rectWidth").value);
+            const height = parseFloat(document.getElementById("rectHeight").value);
+            const rectangle = new Rectangle(width, height);
+            document.getElementById("rectangleResult").innerText = `Area: ${rectangle.getArea()}`;
+        });
+
+        document.getElementById("calculateSquare").addEventListener("click", function() {
+            const side = parseFloat(document.getElementById("squareSide").value);
+            const square = new Square(side);
+            document.getElementById("squareResult").innerText = `Area: ${square.getArea()}, Perimeter: ${square.getPerimeter()}`;
+        });
     </script>
 </body>
 </html>
